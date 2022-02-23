@@ -8,7 +8,7 @@ const { expect } = require("chai");
 // `describe` receives the name of a section of your test suite, and a callback.
 // The callback must define the tests of that section. This callback can't be
 // an async function.
-describe("HelloWorld contract", function () {
+describe("Storage contract", function () {
   // Mocha has four functions that let you hook into the the test runner's
   // lifecyle. These are: `before`, `beforeEach`, `after`, `afterEach`.
 
@@ -18,8 +18,8 @@ describe("HelloWorld contract", function () {
   // A common pattern is to declare some variables, and assign them in the
   // `before` and `beforeEach` callbacks.
 
-  let HelloWorld;
-  let HelloWorldContract;
+  let Storage;
+  let StorageContract;
   let owner;
   let addr1;
   let addr2;
@@ -30,18 +30,19 @@ describe("HelloWorld contract", function () {
   beforeEach(async function () {
     // Get the ContractFactory and Signers here.
     // Deploy Contract
-    HelloWorld = await ethers.getContractFactory("HelloWorld");
+    Storage = await ethers.getContractFactory("Storage");
     [owner, addr1, addr2, ...addrs] = await ethers.getSigners();
 
-    HelloWorldContract = await HelloWorld.deploy();
+    StorageContract = await Storage.deploy();
   });
 
   describe("Transactions", function () {
     // If the callback function is async, Mocha will `await` it.
-    it("Should return the string 'Hello World!'", async function () {
+    it("Should store 5 and return exactly", async function () {
       // Expect receives a value, and wraps it in an Assertion object. These
       // objects have a lot of utility methods to assert values.
-      expect(await HelloWorldContract.print()).to.equal("Hello World!");
+      await StorageContract.store();
+      expect(await StorageContract.get()).to.equal(5);
     });
   });
 });
