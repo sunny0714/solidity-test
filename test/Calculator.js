@@ -39,8 +39,6 @@ describe("Calculator contract", function () {
   describe("Transactions", function () {
     // If the callback function is async, Mocha will `await` it.
     it("Should return right result when adding, substracting, multiplying, dividing", async function () {
-      // Expect receives a value, and wraps it in an Assertion object. These
-      // objects have a lot of utility methods to assert values.
       expect(await CalculatorContract.add(2, 3)).to.equal(5);
       expect(await CalculatorContract.sub(5, 3)).to.equal(2);
       expect(await CalculatorContract.mul(2, 3)).to.equal(6);

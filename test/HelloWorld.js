@@ -39,8 +39,6 @@ describe("HelloWorld contract", function () {
   describe("Transactions", function () {
     // If the callback function is async, Mocha will `await` it.
     it("Should return the string 'Hello World!'", async function () {
-      // Expect receives a value, and wraps it in an Assertion object. These
-      // objects have a lot of utility methods to assert values.
       expect(await HelloWorldContract.print()).to.equal("Hello World!");
     });
   });

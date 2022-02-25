@@ -39,8 +39,6 @@ describe("Storage contract", function () {
   describe("Transactions", function () {
     // If the callback function is async, Mocha will `await` it.
     it("Should store 5 and return exactly", async function () {
-      // Expect receives a value, and wraps it in an Assertion object. These
-      // objects have a lot of utility methods to assert values.
       await StorageContract.store();
       expect(await StorageContract.get()).to.equal(5);
     });

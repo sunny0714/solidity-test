@@ -39,8 +39,6 @@ describe("Owner contract", function () {
   describe("Transactions", function () {
     // If the callback function is async, Mocha will `await` it.
     it("Should set owner and return set owner address exactly", async function () {
-      // Expect receives a value, and wraps it in an Assertion object. These
-      // objects have a lot of utility methods to assert values.
       await OwnerContract.setOwner(addr1.address);
       expect(await OwnerContract.getCurrentOwner()).to.equal(addr1.address);
     });
