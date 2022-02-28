@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
-contract Calculator {
+contract SafeCalculator {
 
     /**
      * @dev Add two passed numbers and check variable overflow
