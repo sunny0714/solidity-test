@@ -1,7 +1,7 @@
 # SafeCalculator
 ## Problem Statement
 
-Extend `std-1/1_Calculator/Calculator.sol` with `UINT` type by performing below checks in its methods:
+Extend `05-Calculator/Calculator.sol` with `UINT` type by performing below checks in its methods:
 
 * Value Overflow
 * Value Underflow
