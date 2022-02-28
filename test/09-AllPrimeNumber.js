@@ -39,6 +39,6 @@ describe("AllPrimeNumber contract", function () {
   it("Should return the prime numbers added in previous call", async function () {
     await AllPrimeNumberContract.addPrime(35);
     let primeArray = await AllPrimeNumberContract.getPrime();
-    console.log(primeArray.toString());
+    console.log('PrimeNumbers of 35 : ', primeArray.toString());
   });
 });
