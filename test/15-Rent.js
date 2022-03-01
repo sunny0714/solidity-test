@@ -40,6 +40,7 @@ describe("Rent contract", function () {
     // If the callback function is async, Mocha will `await` it.
     it("Should be executed on plain Ether transfers", async function () {
       expect(await RentContract.landlord()).to.equal(owner.address);
+      expect(await RentContract.tenantName()).to.equal('Jack');
     });
   });
 });
