@@ -14,11 +14,11 @@ contract Rent {
      * @param age Tenant age
      * @param occupation Tenant occupation
      */
-    constructor (string memory name, uint age, string memory occupation) public{
+    constructor (string memory name, uint age, string memory occupation) {
         tenantName = name;
         tenantAge = age;
         tenantOccupation = occupation;
-        landlord = msg.sender;
+        landlord = payable(msg.sender);
     }
 
     /**
