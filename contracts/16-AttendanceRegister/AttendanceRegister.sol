@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.0;
 
+import "hardhat/console.sol";
+
 contract AttendanceRegister {
 
     struct Student{
@@ -41,6 +43,7 @@ contract AttendanceRegister {
         Student memory s = Student(name, class, joiningDate);
         rollNumber++;
         register[rollNumber] = s;
+        console.log(block.timestamp);
         emit Added(name, class, block.timestamp);
     }
 }
